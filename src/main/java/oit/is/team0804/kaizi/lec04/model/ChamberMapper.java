@@ -16,4 +16,7 @@ public interface ChamberMapper {
   @Insert("INSERT INTO chamber (userName,chamberName) VALUES (#{userName},#{chamberName});")
   @Options(useGeneratedKeys = true, keyColumn = "id", keyProperty = "id")
   void insertChamber(Chamber chamber);
+
+  @Select("SELECT * from chamber where chamberName = #{chamberName}")
+  ArrayList<Chamber> selectAllByChamberName(String chamberName);
 }
