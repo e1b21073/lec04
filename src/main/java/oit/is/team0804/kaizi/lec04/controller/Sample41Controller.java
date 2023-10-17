@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import oit.is.team0804.kaizi.lec04.model.Chamber;
 import oit.is.team0804.kaizi.lec04.model.ChamberMapper;
 
-
 @Controller
 @RequestMapping("/sample4")
 public class Sample41Controller {
@@ -30,6 +29,11 @@ public class Sample41Controller {
     return "sample41.html";
   }
 
+  @GetMapping("step3")
+  public String sample43() {
+    return "sample43.html";
+  }
+
   @GetMapping("step2/{id}")
   public String sample42(@PathVariable Integer id, ModelMap model) {
     Chamber chamber2 = chamberMapper.selectById(id);
@@ -37,4 +41,5 @@ public class Sample41Controller {
 
     return "sample41.html";
   }
+
 }
